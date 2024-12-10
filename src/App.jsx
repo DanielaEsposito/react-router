@@ -2,23 +2,24 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
+
 //PAGES
-import HomePage from "./pages/HomePage";
-import PostList from "./pages/PostListPage";
-import About from "./pages/AboutPage";
-
+import HomePage from "./assets/pages/HomePage";
+import About from "./assets/pages/About";
+import Posts from "./assets/pages/Posts";
+//LAYOUTS
+import DefaultLayout from "./assets/layouts/DefaultLayout";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={DefaultLayout}>
+          <Route index Component={HomePage}></Route>
+          <Route path="/about" Component={About}></Route>
+          <Route path="/posts" Component={Posts}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

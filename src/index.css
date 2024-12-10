@@ -1,1 +1,16 @@
-
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper > main {
+  flex-grow: 1;
+}
+.navbar-pages {
+  background-color: ;
+}
+.footer-page {
+  height: 100px;
+  background-color: rgb(56, 56, 56);
+  color: white;
+}

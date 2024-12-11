@@ -55,7 +55,10 @@ export default function PostsList() {
                   >
                     Elimina
                   </button>
-                  <Link className="btn btn-secondary btn-sm update-button">
+                  <Link
+                    to={`/posts/${post.id}`}
+                    className="btn btn-secondary btn-sm update-button"
+                  >
                     Mostra
                   </Link>
                 </div>

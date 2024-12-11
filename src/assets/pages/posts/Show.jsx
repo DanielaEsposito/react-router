@@ -3,7 +3,16 @@ import { useParams } from "react-router-dom";
 
 export default function Show() {
   const postID = useParams().id;
-  const [post, setPost] = useState(null);
+  console.log(postID);
+
+  const [post, setPost] = useState({
+    id: "",
+    title: "",
+    img: "",
+    category: "",
+    content: "",
+    tags: [],
+  });
 
   useEffect(() => {
     fetchPost(postID);
@@ -27,7 +36,7 @@ export default function Show() {
 
   return (
     <div className="containere">
-      {/* <div className="col">
+      <div className="col">
         <div className="card">
           <div className="card-img-container">
             <img
@@ -40,7 +49,7 @@ export default function Show() {
             <h5 className="card-title">{post.title}</h5>
             <div className="post-tags">
               <div className="tag ">
-                {data.tags.map((tag, index) => (
+                {post.tags.map((tag, index) => (
                   <span key={index} className="badge me-3 my-2">
                     {tag}
                   </span>
@@ -49,7 +58,7 @@ export default function Show() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -6,10 +6,11 @@ import viteLogo from "/vite.svg";
 //PAGES
 import HomePage from "./assets/pages/HomePage";
 import About from "./assets/pages/About";
-import Posts from "./assets/pages/Posts";
+import PostsList from "./assets/pages/PostsList";
 import NotFound from "./assets/pages/NotFound";
 //LAYOUTS
 import DefaultLayout from "./assets/layouts/DefaultLayout";
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +18,7 @@ function App() {
         <Route Component={DefaultLayout}>
           <Route index Component={HomePage}></Route>
           <Route path="/about" Component={About}></Route>
-          <Route path="/posts" Component={Posts}></Route>
+          <Route path="/posts" Component={PostsList}></Route>
           <Route path="*" Component={NotFound}></Route>
         </Route>
       </Routes>

@@ -5,14 +5,7 @@ export default function Show() {
   const postID = useParams().id;
   console.log(postID);
 
-  const [post, setPost] = useState({
-    id: "",
-    title: "",
-    img: "",
-    category: "",
-    content: "",
-    tags: [],
-  });
+  const [post, setPost] = useState(null);
 
   useEffect(() => {
     fetchPost(postID);
@@ -22,6 +15,8 @@ export default function Show() {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
+          console.error("Errore nel fetch: ", res.status);
+          throw new Error("Errore nel recupero dei dati");
         }
         return res.json();
       })
@@ -36,7 +31,7 @@ export default function Show() {
 
   return (
     <div className="containere">
-      <div className="col">
+      {/* <div className="col">
         <div className="card">
           <div className="card-img-container">
             <img
@@ -58,7 +53,7 @@ export default function Show() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

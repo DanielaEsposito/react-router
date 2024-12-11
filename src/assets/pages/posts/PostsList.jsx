@@ -49,7 +49,7 @@ export default function PostsList() {
                     </div>
                   </div>
                   <button
-                    className="btn btn-danger btn-sm delete-button"
+                    className="btn btn-danger btn-sm delete-button me-2"
                     data-bs-toggle="modal"
                     data-bs-target={`#modal-delete-post-${post.id}`}
                   >
